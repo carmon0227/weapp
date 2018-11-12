@@ -1,0 +1,49 @@
+<!--pages/shopcart/shopcart.wxml-->
+<wxs module='filter' src='../../utils/filter.wxs'></wxs>
+
+<view class='empty' wx:if="{{!hasList}}">
+    <view>
+        <image src='/assets/tabbar/shopcart-empty.png'></image>
+        <text>空空如也，赶快去添加商品吧</text>
+    </view>
+</view>
+<view class='pro'>
+    <view class='pro-item' wx:for="{{shopCartList}}" wx:key="{{spid}}">
+        <view class='item-icon'>
+            <image src="/assets/icon/check-true.png" wx:if="{{item.selected}}" bindtap="isSelected" data-index="{{index}}"></image>
+            <image src="/assets/icon/check-false.png" wx:else="{{item.selected}}" bindtap="isSelected" data-index="{{index}}"></image>
+        </view>
+        <view class='item-msg'>
+            <view class='msg' bindtap='goDetail' data-pid="{{item.pid}}">
+                <view class='msg1'>
+                    <image src="{{item.spimg_url}}"></image>
+                </view>
+                <view class='msg2'>
+                    <text>{{item.pname}}</text>
+                    <text>已选: {{item.colorspec}}</text>
+                    <text>￥{{filter.price(item.price)}}</text>
+                </view>
+            </view>
+            <view class='controls'>
+                <image src="/assets/icon/reduce-true.png" bindtap='red' data-index="{{index}}"></image>
+                <input type="text" value="{{item.quantity}}" data-quantity="{{item.quantity}}"></input>
+                <image src="/assets/icon/add-true.png" bindtap='add' data-index="{{index}}"></image>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class='footer'>
+    <view class='sel-cell'>
+        <view class='sel-cell-item'>
+            <view class='item-icon'>
+                <image src="/assets/icon/check-true.png" wx:if="{{selectAllStatus}}" bindtap="selectAll"></image>
+                <image src="/assets/icon/check-false.png" wx:else="{{selectAllStatus}}" bindtap="selectAll"></image>
+            </view>
+            <text>全选</text>
+        </view>
+        <view class='del' bindtap='deleteItems'><text>删除</text></view>
+    </view>
+    <view class='total'>总计 : <text>￥{{totalPrice}}</text></view>
+    <view class='pay' bindtap='pay'>结算</view>
+</view>

@@ -1,0 +1,156 @@
+/* pages/productDetail/productDetail.wxss */
+page{
+    box-sizing: border-box;
+}
+swiper{
+    height:650rpx;
+    box-sizing: border-box;
+}
+/* .swiper swiper-item{
+    height:100%;
+} */
+.swiper image{
+    width:100%;
+    height:100%;
+}
+.pro-img{
+    margin-bottom:120rpx;
+}
+.pro-img image{
+    width:100%;
+    /* height:800rpx; */
+}
+.pro-msg{
+    font-size: 14px;
+    font-weight: bold;
+    padding:20rpx;
+    background:#F9F8F8;
+}
+.pro-msg text{
+    display: block;
+}
+.pro-msg text:last-child{
+    font-size: 15px;
+    color:#62c3d3;
+}
+.footer{
+    box-sizing: border-box;
+    position: fixed;
+    bottom:0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:100%;
+    background:#fff;
+    padding:0 0 0 40rpx;
+    font-size: 12px;
+    color:#fff;
+    z-index:30;
+}
+.footer-cart{
+    width:50rpx;
+    height:50rpx;
+    position:relative;
+}
+.footer-cart .span{
+    width:30rpx;
+    height:30rpx;
+    background: #62c3d3;
+    color:#fff;
+    font-size: 8px;
+    text-align: center;
+    position:absolute;
+    top:-10rpx;
+    right:-15rpx;
+    border-radius: 50%;
+}
+.footer-buynow{
+    display:flex;
+    justify-content: center;
+    width:75%;
+}
+.footer image{
+    width:50rpx;
+    height:50rpx;
+}
+/* .footer text{
+    display: inline-block;
+    height:100%;
+} */
+.footer .addcart,.footer .buy{
+    text-align: center;
+    padding:30rpx 0;
+    height:100%;
+    width:50%;
+}
+.footer .addcart{
+    background:#67acf2;
+    width:100%;
+    font-size: 13px;
+}
+/* .footer .buy{
+    background:#7cc2d1;
+} */
+
+/* 弹出框 */
+.commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 10;
+  color: #fff;
+}
+
+.commodity_attr_box {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+  background: #fff;
+  padding:0 20rpx;
+  box-sizing: border-box;
+  margin-bottom:92rpx;
+}
+
+.color,.count{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    padding:20rpx;
+    border-bottom:1px solid #ddd;
+}
+.color-sel text{
+    display: inline-block;
+    border:1px solid gray;
+    padding:5rpx 10rpx;
+    margin:0 5rpx;
+    font-size: 12px;
+    border-radius: 5rpx;
+}
+.count image{
+    width:35rpx;
+    height:35rpx;
+}
+.count-controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.count-controls input{
+    width:50rpx;
+    text-align: center;
+}
+/* 点击变色 */
+.checked{
+    background:#62c3d3;
+    color:#fff;
+    border:0;
+}

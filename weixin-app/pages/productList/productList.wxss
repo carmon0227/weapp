@@ -1,0 +1,31 @@
+/* pages/productList/productList.wxss */
+page{
+    background: #F9F8F8;
+    box-sizing: border-box;
+}
+.product-list{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding:0 10rpx;
+}
+.product-list .pro-item{
+    /* height:500rpx; */
+    background:#fff;
+    margin-top:20rpx;
+}
+.pro-item image{
+    width:350rpx;
+    height:350rpx;
+}
+.pro-item .text{
+    padding:20rpx;
+}
+.pro-item .text text{
+    display:block;
+    font-size: 14px;
+}
+.pro-item .text text:last-child{
+    font-size: 13px;
+    color:#62c3d3;
+}

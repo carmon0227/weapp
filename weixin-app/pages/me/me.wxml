@@ -1,0 +1,39 @@
+<!--pages/me/me.wxml-->
+<view class='head'>
+    <view class='header'>
+        <view class='userinfo'>
+            <view class='avatar'>
+                <image src="{{userInfo.avatarUrl}}" mode="cover"></image>
+            </view>
+            <text>{{userInfo.nickName}}</text>
+        </view>
+        <view class='subHeader'>
+            <view class='header-item'>
+                <image src="/assets/icon/collection-w.png"></image>
+                <text>收藏夹</text>
+            </view>
+            <view class='header-item' bindtap='goOrder'>
+                <image src="/assets/icon/order.png"></image>
+                <text>我的订单</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view class='service'>
+    <view class='service-cell'>
+        <image src="/assets/icon/wait-pay-6.png"></image>
+        <text>待付款</text>
+    </view>
+    <view class='service-cell'>
+        <image src="/assets/icon/wait-deliver-6.png"></image>
+        <text>待发货</text>
+    </view>
+    <view class='service-cell'>
+        <image src="/assets/icon/wait-pick-6.png"></image>
+        <text>待收货</text>
+    </view>
+    <view class='service-cell' bindtap='clear'>
+        <image src="/assets/icon/service-6.png"></image>
+        <text>退款/售后</text>
+    </view>
+</view>

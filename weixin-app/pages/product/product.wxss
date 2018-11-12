@@ -1,0 +1,70 @@
+/* pages/product/product.wxss */
+page{
+    position:relative;
+}
+.none-msg{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    width:100%;
+    text-align: center;
+    z-index:10;
+    margin:auto;
+    font-size: 15px;
+    background:#F9F8F8;
+}
+.none-msg text{
+    display: block;
+    margin-top:20%;
+}
+.head{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:10rpx 20rpx;
+    position: fixed;
+    top:0;
+    width:100%;
+    box-sizing: border-box;
+    background:#fff;
+}
+.head image{
+    width:40rpx;
+    height:40rpx;
+}
+.head input{
+    width:75%;
+    font-size: 12px;
+    background: #F9F8F8;
+    padding:0 20rpx;
+    border-radius: 50rpx;
+}
+.prev{
+    box-sizing: border-box;
+    margin-top:75rpx;
+}
+.prev-cell{
+    background: #F9F8F8;
+    display:flex;
+    justify-content: start;
+    padding:20rpx 30rpx;
+    border-bottom:1px solid #ddd;
+}
+.prev-cell image{
+    width:200rpx;
+    height:200rpx;
+}
+.prev-cell .text{
+    padding:15rpx 30rpx;
+    font-size: 14px;
+    
+}
+.prev-cell .text text{
+    display: block;
+}
+.prev-cell .text text:last-child{
+    color:#62c3d3;
+    margin-top:20rpx;
+}

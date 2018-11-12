@@ -1,0 +1,69 @@
+<!--index.wxml-->
+<wxs module='filter' src='../../utils/filter.wxs'></wxs>
+
+<view class='index'>
+    <input type="text" placeholder='请输入关键字' bindfocus='go'></input>
+</view>
+<view class='swiper'>
+    <swiper autoplay interval="4000" during="800" indicator-dots indicator-active-color='#fff'>
+        <swiper-item>
+            <image src="/assets/slider/1.png" mode="aspectFill" lazy-load width="375" height="150"></image>
+        </swiper-item>
+        <swiper-item>
+            <image src="/assets/slider/2.png" mode="aspectFill" lazy-load width="375" height="150"></image>
+        </swiper-item>
+        <swiper-item>
+            <image src="/assets/slider/3.png" mode="aspectFill" lazy-load width="375" height="150"></image>
+        </swiper-item>
+        <swiper-item>
+            <image src="/assets/slider/4.png" mode="aspectFill" lazy-load width="375" height="150"></image>
+        </swiper-item>
+    </swiper>
+</view>
+<view class='cell'>
+    <text>蓝牙耳机</text>
+    <view class='cell-showmore' bindtap="showmore">
+        <text>查看更多</text>
+    </view>
+</view>
+<scroll-view scroll-x class='scroll-view' style="width:100%;">
+    <view class='scroll-view-item' wx:for="{{index_info}}" wx:key="{{pid}}" data-pid="{{item.pid}}" bindtap="goDetail">
+        <image src="{{item.img_url}}"></image>
+        <view class='item-text'>
+            <text>{{item.pname}}</text>
+            <text>￥{{filter.price(item.price)}}</text>
+        </view>
+    </view>
+    <!-- <view class='scroll-view-item'>
+        <image src="/assets/selector/1.png"></image>
+        <view class='item-text'>
+            <text>GS-MO蓝牙耳机</text>
+            <text>￥138.00</text>
+        </view>
+    </view>
+    <view class='scroll-view-item'>
+        <image src="/assets/selector/2.png"></image>
+        <view class='item-text'>
+            <text>GS-MO蓝牙耳机</text>
+            <text>￥138.00</text>
+        </view>
+    </view>
+    <view class='scroll-view-item'>
+        <image src="/assets/selector/3.png"></image>
+        <view class='item-text'>
+            <text>GS-MO蓝牙耳机</text>
+            <text>￥138.00</text>
+        </view>
+    </view>
+    <view class='scroll-view-item'>
+        <image src="/assets/selector/4.png"></image>
+        <view class='item-text'>
+            <text>GS-MO蓝牙耳机</text>
+            <text>￥138.00</text>
+        </view>
+    </view> -->
+</scroll-view>
+<view class='index-image'>
+    <image src="/assets/index/1.jpg"></image>
+    <image src="/assets/index/2.png"></image>
+</view>

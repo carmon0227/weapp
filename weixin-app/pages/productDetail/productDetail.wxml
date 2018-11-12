@@ -1,0 +1,74 @@
+<!--pages/productDetail/productDetail.wxml-->
+<wxs module='filter' src='../../utils/filter.wxs'></wxs>
+
+<view class='swiper'>
+    <swiper autoplay interval="4000" during="800">
+        <swiper-item wx:for="{{s_img}}" wx:key="{{sid}}">
+            <image src="{{item.simg_url}}" lazy-load mode="aspectFill"></image>
+        </swiper-item>
+        <!-- <swiper-item>
+            <image src="/assets/pro01/1.png" lazy-load mode="aspectFill"></image>
+        </swiper-item>
+        <swiper-item>
+            <image src="/assets/pro01/2.png" lazy-load mode="aspectFill"></image>
+        </swiper-item>
+        <swiper-item>
+            <image src="/assets/pro01/3.png" lazy-load mode="aspectFill"></image>
+        </swiper-item>
+        <swiper-item>
+            <image src="/assets/pro01/4.png" lazy-load mode="aspectFill"></image>
+        </swiper-item>
+        <swiper-item>
+            <image src="/assets/pro01/5.png" lazy-load mode="aspectFill"></image>
+        </swiper-item> -->
+    </swiper>
+</view>
+<view class='pro-msg' wx:for="{{basicmsg}}" wx:key="{{id}}">
+    <text>{{item.pname}}</text>
+    <text>￥{{filter.price(item.price)}}</text>
+</view>
+<view class='pro-img'>
+    <view wx:for="{{i_img}}" wx:key="{{iid}}">
+        <image src="{{item.iimg_url}}" lazyload></image>
+    </view>
+    <!-- <image src="/assets/pro01/6.png"></image>
+    <image src="/assets/pro01/7.png"></image>
+    <image src="/assets/pro01/8.png"></image>
+    <image src="/assets/pro01/9.png"></image>
+    <image src="/assets/pro01/10.png"></image> -->
+</view>
+<view class='footer'>
+    <view class='footer-cart'>
+        <image src="/assets/tabbar/shopcart.png" bindtap='gocart'></image>
+        <view class='span' wx:if="{{showspan}}">{{spannum}}</view>
+    </view>
+    <image src="/assets/tabbar/collection.png"></image>
+    <view class='footer-buynow'>
+        <view class='addcart' bindtap='showModal'>
+            <text>加入购物车</text>
+        </view>
+        <!-- <view class='buy' bindtap='showModal'>
+            <text>立即购买</text>
+        </view> -->
+    </view>
+</view>
+<view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+    <view class='color'>
+        <text>颜色分类</text>
+        <view class="color-sel" bindtap='checked'>
+            <text wx:for="{{colorSpec}}" wx:key="{{index}}" class="{{cur==index?'checked':''}}" data-index="{{index}}" data-spid="{{item.spid}}" data-spimg_url="{{item.spimg_url}}" data-colorspec="{{item.color}}">{{item.color}}</text>
+            <!-- <text>白色</text>
+            <text>黑色</text>
+            <text>米色</text> -->
+        </view>
+    </view>
+    <view class='count'>
+        <text>数量</text>
+        <view class='count-controls'>
+            <image src="/assets/icon/reduce-true.png" bindtap='red'></image>
+            <input type="text" value="{{num}}"></input>
+            <image src="/assets/icon/add-true.png" bindtap="add"></image>
+        </view>
+    </view>
+</view>

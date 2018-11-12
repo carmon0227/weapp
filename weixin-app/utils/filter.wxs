@@ -1,0 +1,11 @@
+function price(value) {
+    if (!isNaN(value)) {
+        return value.toFixed(2);
+    } else {
+        return Number(value).toFixed(2);
+    }
+}
+
+module.exports = {
+    price: price
+}

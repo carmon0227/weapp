@@ -1,0 +1,18 @@
+<!--pages/order/order.wxml-->
+<wxs module='filter' src='../../utils/filter.wxs'></wxs>
+
+<view class='order'>
+    <view class='order-item' wx:for="{{myorderList}}" wx:key="{{orid}}" data-pid="{{item.pid}}" bindtap='goDetail'>
+        <view class='order-img'>
+            <image src="{{item.oimg_url}}"></image>
+        </view>
+        <view class='order-msg'>
+            <text>{{item.pname}}</text>
+            <text>{{item.colorspec}}</text>
+        </view>
+        <view class='order-price'>
+            <text>已完成</text>
+            <text>￥{{filter.price(item.price)}}</text>
+        </view>
+    </view>
+</view>
