@@ -1,5 +1,0 @@
-<!--pages/test/test.wxml-->
-<text>pages/test/test.wxml</text>
-<view class='c1' bindtap='showModal'>clickme</view>
-<view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}">click</view>
-<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">这是弹出框</view>
