@@ -4,7 +4,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    index_info:[]
+    index_info:[],
+    index_swiper:[],
+    index_details:[],
   },
 
     showmore: function () {
@@ -30,16 +32,38 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    //轮播
+      wx.request({
+          url: 'http://127.0.0.1:3030/index/index_swiper',
+          method: "get",
+          success: (res) => {
+              this.setData({
+                  index_swiper: res.data
+              })
+          }
+      })
+
+    //左右滑
     wx.request({
         url: 'http://127.0.0.1:3030/index/index_info',
         method:"get",
         success:(res)=>{
-            console.log(res.data)
             this.setData({
                 index_info:res.data
             })
         }
     })
+
+    //详情
+      wx.request({
+          url: 'http://127.0.0.1:3030/index/index_details',
+          method: "get",
+          success: (res) => {
+              this.setData({
+                  index_details: res.data
+              })
+          }
+      })
   },
 
   /**

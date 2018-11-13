@@ -2,11 +2,15 @@
 <wxs module='filter' src='../../utils/filter.wxs'></wxs>
 
 <view class='index'>
+    <image src="/assets/icon/search.png"></image>
     <input type="text" placeholder='请输入关键字' bindfocus='go'></input>
 </view>
 <view class='swiper'>
-    <swiper autoplay interval="4000" during="800" indicator-dots indicator-active-color='#fff'>
-        <swiper-item>
+    <swiper autoplay interval="4000" during="800" indicator-dots indicator-active-color='#fff' circular>
+        <swiper-item wx:for="{{index_swiper}}" wx:key="{{isid}}">
+            <image src="{{item.isimg_url}}" mode="aspectFill" lazy-load width="375" height="150"></image>
+        </swiper-item>
+        <!-- <swiper-item>
             <image src="/assets/slider/1.png" mode="aspectFill" lazy-load width="375" height="150"></image>
         </swiper-item>
         <swiper-item>
@@ -17,7 +21,7 @@
         </swiper-item>
         <swiper-item>
             <image src="/assets/slider/4.png" mode="aspectFill" lazy-load width="375" height="150"></image>
-        </swiper-item>
+        </swiper-item> -->
     </swiper>
 </view>
 <view class='cell'>
@@ -28,7 +32,7 @@
 </view>
 <scroll-view scroll-x class='scroll-view' style="width:100%;">
     <view class='scroll-view-item' wx:for="{{index_info}}" wx:key="{{pid}}" data-pid="{{item.pid}}" bindtap="goDetail">
-        <image src="{{item.img_url}}"></image>
+        <image src="{{item.img_url}}" lazyload></image>
         <view class='item-text'>
             <text>{{item.pname}}</text>
             <text>￥{{filter.price(item.price)}}</text>
@@ -64,6 +68,8 @@
     </view> -->
 </scroll-view>
 <view class='index-image'>
-    <image src="/assets/index/1.jpg"></image>
-    <image src="/assets/index/2.png"></image>
+    <view wx:for="{{index_details}}" wx:key="{{idid}}">
+        <image src="{{item.idimg_url}}" mode="widthFix" lazyload></image>
+    </view>
+    <!-- <image src="/assets/index/2.png" mode="widthFix"></image> -->
 </view>

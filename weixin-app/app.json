@@ -5,10 +5,10 @@
         "pages/shopcart/shopcart",
         "pages/product/product",
         "pages/productDetail/productDetail",
-        "pages/test/test",
         "pages/me/me",
         "pages/productList/productList",
-        "pages/logs/logs"
+        "pages/logs/logs",
+        "pages/collection/collection"
     ],
     "window": {
         "backgroundTextStyle": "light",

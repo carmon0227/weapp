@@ -1,0 +1,28 @@
+<!--pages/collection/collection.wxml-->
+<wxs module='filter' src='../../utils/filter.wxs'></wxs>
+
+<view class='collection' wx:for="{{collection}}" wx:key="{{id}}">
+    <view class='collection-item'>
+        <view class='item-img'>
+            <image src="{{item.img_url}}" mode='aspectFill'></image>
+        </view>
+        <view class='item-msg'>
+            <text class='item-title'>{{item.pname}}</text>
+            <view class='item-price'>
+                <text>￥{{filter.price(item.price)}}</text>
+                <image src="/assets/icon/more.png" bindtap='showmore' data-index="{{index}}"></image>
+            </view>
+        </view>
+    </view>
+    <view class='more-item' wx:if="{{isShowmore}}">
+        <view class='item'>
+            <image src='/assets/icon/collection.png'></image>
+            <text>加入购物车</text>
+        </view>
+        <view class='divider'></view>
+        <view class='item'>
+            <image src='/assets/icon/collection.png'></image>
+            <text>取消收藏</text>
+        </view>
+    </view>
+</view>

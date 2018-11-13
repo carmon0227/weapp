@@ -13,7 +13,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.3.1",
 	"appid": "wx9edc155f4ad43976",
-	"projectname": "weixin-app",
+	"projectname": "weapp",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
@@ -41,7 +41,7 @@
 				{
 					"id": 0,
 					"name": "自定义",
-					"pathName": "pages/index/index",
+					"pathName": "pages/collection/collection",
 					"query": ""
 				}
 			]

@@ -27,6 +27,8 @@ Page({
         spimg_url:"",      //存放每个规格对应的购物车页面prev图
         colorspec:"",      //存放每个规格对应的颜色
         basicmsg:"",      //存放商品基本信息
+        isCollected:false,      //控制商品收藏状态
+        pid:null,      //存放传递过来的pid
     },
 
     gocart() {
@@ -34,6 +36,44 @@ Page({
             url: '/pages/shopcart/shopcart',
         })
     },
+    collect(){
+        this.setData({
+            isCollected:!this.data.isCollected
+        })
+        if(this.data.isCollected){
+            wx.showToast({
+                title: '收藏成功~',
+                icon:"none",
+                duration:2000
+            })
+            setTimeout(()=>{
+                wx.hideToast();
+            },2000)
+            //把本商品存入本地缓存中
+            var basicmsg = this.data.basicmsg;
+            var myCollection=wx.getStorageSync("collection") || [];
+            myCollection=myCollection.concat(basicmsg);
+            wx.setStorageSync("collection", myCollection)
+        }else{
+            wx.showToast({
+                title: '成功取消收藏~',
+                icon: "none",
+                duration: 2000
+            })
+            setTimeout(() => {
+                wx.hideToast();
+            }, 2000)
+            var myCollection = wx.getStorageSync("collection")
+            for(var i=0;i<myCollection.length;i++){
+                if(this.data.pid==myCollection[i].pid){
+                    myCollection.splice(i,1)
+                }
+            }
+            //console.log(myCollection)
+            wx.setStorageSync("collection", myCollection)
+        }
+    },
+
     //控制input
     add(){
         var n=this.data.num+1;
@@ -104,10 +144,7 @@ Page({
             //判断购物车缓存中是否已存在该货品
             var exist = cartItems.find( (ele)=> {
                 return ele.spid == this.data.spid   //使用每个规格对应的独一无二的id比较
-                //console.log(ele.spec)
-                //console.log(this.data.cur)
             })
-            //console.log(exist)
             if (exist) {
                 //如果存在，则增加该货品的购买数量
                 exist.quantity = parseInt(exist.quantity) + this.data.num
@@ -191,9 +228,18 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        //console.log("传递过来的参数是")
-        //console.log(options.pid+"+"+options.pname+"+"+options.price+"+"+options.color)
-        //将传递过来的参数放在data中
+        //console.log(options.pid)
+        var myCollection=wx.getStorageSync("collection") || [];
+        if(myCollection.length){
+            for(var i=0;i<myCollection.length;i++){
+                if(options.pid==myCollection[i].pid){
+                    this.setData({
+                        isCollected:true,
+                        pid:options.pid
+                    })
+                }
+            }
+        }
         
         //根据传递过来的pid发送请求
         var pid=options.pid;
@@ -222,6 +268,7 @@ Page({
                 this.setData({
                     basicmsg: res.data
                 })
+                //console.log(this.data.basicmsg)
             }
         })
         wx.request({

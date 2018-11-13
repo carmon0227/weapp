@@ -1,11 +1,24 @@
 /**index.wxss**/
-.index input{
+.index{
+    box-sizing: border-box;
     border-radius: 50rpx;
     background:#F9F8F8;
-    width:80%;
-    font-size: 12px;
-    padding:0 20rpx;
+    width:85%;
+    padding:10rpx 20rpx;
     margin:0 auto;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.index image{
+    width:38rpx;
+    height:38rpx;
+}
+.index input{
+    background:#F9F8F8;
+    width:100%;
+    font-size: 13px;
+    margin-left:10rpx;
     /* text-align: center; */
 }
 .swiper{

@@ -29,7 +29,7 @@
 </view>
 <view class='pro-img'>
     <view wx:for="{{i_img}}" wx:key="{{iid}}">
-        <image src="{{item.iimg_url}}" lazyload></image>
+        <image src="{{item.iimg_url}}" lazyload mode="widthFix"></image>
     </view>
     <!-- <image src="/assets/pro01/6.png"></image>
     <image src="/assets/pro01/7.png"></image>
@@ -42,7 +42,8 @@
         <image src="/assets/tabbar/shopcart.png" bindtap='gocart'></image>
         <view class='span' wx:if="{{showspan}}">{{spannum}}</view>
     </view>
-    <image src="/assets/tabbar/collection.png"></image>
+    <image src="/assets/icon/collection.png" wx:if="{{!isCollected}}" bindtap="collect"></image>
+    <image src="/assets/icon/collection-fill.png" wx:if="{{isCollected}}" bindtap="collect"></image>
     <view class='footer-buynow'>
         <view class='addcart' bindtap='showModal'>
             <text>加入购物车</text>

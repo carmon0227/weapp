@@ -3,7 +3,10 @@
 
 <view class='head'>
     <image src="/assets/tabbar/home.png" bindtap='gohome'></image>
-    <input type="text" placeholder='搜索商品' bindconfirm='show'></input>
+    <view class='input'>
+        <image src="/assets/icon/search.png"></image>
+        <input type="text" placeholder='请搜索商品' bindconfirm='show'></input>
+    </view>
     <image src="/assets/tabbar/more.png"></image>
 </view>
 <view class='prev'>

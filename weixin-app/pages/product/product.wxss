@@ -31,19 +31,39 @@ page{
     background:#fff;
 }
 .head image{
-    width:40rpx;
-    height:40rpx;
+    width:45rpx;
+    height:45rpx;
 }
-.head input{
+/* .head input{
     width:75%;
     font-size: 12px;
     background: #F9F8F8;
-    padding:0 20rpx;
+    padding:10rpx 20rpx;
     border-radius: 50rpx;
+} */
+.input{
+    box-sizing: border-box;
+    border-radius: 50rpx;
+    background:#F9F8F8;
+    width:80%;
+    padding:10rpx 20rpx;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.input image{
+    width:38rpx;
+    height:38rpx;
+}
+.input input{
+    background:#F9F8F8;
+    width:100%;
+    font-size: 13px;
+    margin-left:10rpx;
 }
 .prev{
     box-sizing: border-box;
-    margin-top:75rpx;
+    margin-top:95rpx;
 }
 .prev-cell{
     background: #F9F8F8;
