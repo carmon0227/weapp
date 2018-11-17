@@ -15,13 +15,10 @@ Page({
     },
     
     go:function(e) {
-        //console.log(e.target.dataset)
         var pid = e.currentTarget.dataset.pid;
-        //console.log(pid)
         var pname = e.currentTarget.dataset.pname;
         var price = e.currentTarget.dataset.price;
         var color = e.currentTarget.dataset.color;
-        //console.log(pid)
         wx.navigateTo({
             url: '/pages/productDetail/productDetail?pid='+pid
         })
@@ -30,18 +27,13 @@ Page({
     //搜索
     show(e) {
         var value = e.detail.value;
-        //console.log(value)
         wx.request({
             url: 'http://127.0.0.1:3030/search/search_info',
             method:"post",
             data:{
                 value:value
             },
-            // header: {
-            //     'content-type': 'application/x-www-form-urlencoded'
-            // },
             success:(res)=>{
-                //console.log(res)
                 this.setData({
                     search:res.data
                 })

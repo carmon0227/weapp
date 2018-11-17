@@ -24,13 +24,8 @@ Page({
         carts[index].quantity=num;
         this.setData({
             shopCartList:carts,
-            //shopCartInfo:this.data.shopCartList
-            //放入globaldata
         })
         this.getTotalPrice();
-        //app.globalData.shopCartInfo=shopCartInfo;
-        //console.log(shopCartInfo)
-
     },
     red(e) {
         var index=e.target.dataset.index;
@@ -63,10 +58,8 @@ Page({
     },
     //单个选择事件
     isSelected(e){
-        //console.log(111111)
         var index=e.currentTarget.dataset.index;
         var carts=this.data.shopCartList;
-        //console.log(carts)
         var selected=carts[index].selected;
         carts[index].selected=!selected;
         this.setData({
@@ -95,10 +88,8 @@ Page({
     },
     //删除商品
     deleteItems() {
-        //console.log(this.data.shopCartList)
         var carts = this.data.shopCartList;
         console.log(carts)
-        //var newcarts=carts;
         for (var i = 0; i < carts.length; i++) {   //???
             if (carts[i].selected) {
                 carts.splice(i--,1);
@@ -109,7 +100,6 @@ Page({
         this.setData({
             shopCartList: carts
         })
-        //console.log(this.data.shopCartList)
         if(!carts.length){
             this.setData({
                 hasList:false
@@ -121,9 +111,7 @@ Page({
 
     //跳转
     goDetail:function(e){
-        //console.log(e.currentTarget)
         var pid = e.currentTarget.dataset.pid;
-        //console.log(pid)
         wx.navigateTo({
             url: '/pages/productDetail/productDetail?pid='+pid,
         })
@@ -192,10 +180,6 @@ Page({
                     })
                 }
             },1000)
-            // this.getTotalPrice();
-            // this.setData({
-            //     hasList: false
-            // })
         } 
     },
 
@@ -227,17 +211,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    //   this.setData({
-    //       shopCartList: app.globalData.shopCartInfo
-    //   })
-    //console.log("监听到页面显示")
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-      //console.log(this.data.shopCartList)
         //页面隐藏（更改）时,把shopCartList的数据放入本地储存中
         wx.setStorage({
             key: 'cartItems',
@@ -245,7 +225,6 @@ Page({
         })
         var sum = 0;
         for (var i = 0; i < this.data.shopCartList.length; i++) {
-            //console.log(this.data.shopCartList[i].quantity)
             sum += this.data.shopCartList[i].quantity
             wx.setStorage({
                 key: 'cartnum',

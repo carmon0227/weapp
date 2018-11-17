@@ -10,18 +10,6 @@
         <swiper-item wx:for="{{index_swiper}}" wx:key="{{isid}}">
             <image src="{{item.isimg_url}}" mode="aspectFill" lazy-load width="375" height="150"></image>
         </swiper-item>
-        <!-- <swiper-item>
-            <image src="/assets/slider/1.png" mode="aspectFill" lazy-load width="375" height="150"></image>
-        </swiper-item>
-        <swiper-item>
-            <image src="/assets/slider/2.png" mode="aspectFill" lazy-load width="375" height="150"></image>
-        </swiper-item>
-        <swiper-item>
-            <image src="/assets/slider/3.png" mode="aspectFill" lazy-load width="375" height="150"></image>
-        </swiper-item>
-        <swiper-item>
-            <image src="/assets/slider/4.png" mode="aspectFill" lazy-load width="375" height="150"></image>
-        </swiper-item> -->
     </swiper>
 </view>
 <view class='cell'>
@@ -38,38 +26,9 @@
             <text>￥{{filter.price(item.price)}}</text>
         </view>
     </view>
-    <!-- <view class='scroll-view-item'>
-        <image src="/assets/selector/1.png"></image>
-        <view class='item-text'>
-            <text>GS-MO蓝牙耳机</text>
-            <text>￥138.00</text>
-        </view>
-    </view>
-    <view class='scroll-view-item'>
-        <image src="/assets/selector/2.png"></image>
-        <view class='item-text'>
-            <text>GS-MO蓝牙耳机</text>
-            <text>￥138.00</text>
-        </view>
-    </view>
-    <view class='scroll-view-item'>
-        <image src="/assets/selector/3.png"></image>
-        <view class='item-text'>
-            <text>GS-MO蓝牙耳机</text>
-            <text>￥138.00</text>
-        </view>
-    </view>
-    <view class='scroll-view-item'>
-        <image src="/assets/selector/4.png"></image>
-        <view class='item-text'>
-            <text>GS-MO蓝牙耳机</text>
-            <text>￥138.00</text>
-        </view>
-    </view> -->
 </scroll-view>
 <view class='index-image'>
     <view wx:for="{{index_details}}" wx:key="{{idid}}">
         <image src="{{item.idimg_url}}" mode="widthFix" lazyload></image>
     </view>
-    <!-- <image src="/assets/index/2.png" mode="widthFix"></image> -->
 </view>

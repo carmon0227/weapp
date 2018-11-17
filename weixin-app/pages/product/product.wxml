@@ -17,26 +17,5 @@
             <text>￥{{filter.price(item.price)}}</text>
         </view>
     </view>
-    <!-- <view class='prev-cell' bindtap='go'>
-        <image src="/assets/products_prev/1.png"></image>
-        <view class='text'>
-            <text>GS-MO蓝牙耳机</text>
-            <text>￥138.00</text>
-        </view>
-    </view>
-    <navigator class='prev-cell'>
-        <image src="/assets/products_prev/2.png"></image>
-        <view class='text'>
-            <text>GS-MO蓝牙耳机</text>
-            <text>￥138.00</text>
-        </view>
-    </navigator>
-    <navigator class='prev-cell'>
-        <image src="/assets/products_prev/3.png"></image>
-        <view class='text'>
-            <text>GS-MO蓝牙耳机</text>
-            <text>￥138.00</text>
-        </view>
-    </navigator> -->
 </view>
 <view class='none-msg' wx:if="{{!hasPro}}"><text>很抱歉，没有该商品信息</text></view>

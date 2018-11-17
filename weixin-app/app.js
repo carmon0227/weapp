@@ -39,8 +39,6 @@ App({
 
     //每次打开，从本地储存拿出数据放在globaldata中
       var list=wx.getStorageSync("cartItems")
-      //console.log(list)
       this.globalData.shopCartInfo=list
-      //console.log(this.globalData.userInfo)
   },
 })

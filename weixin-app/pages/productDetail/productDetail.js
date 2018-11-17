@@ -91,16 +91,12 @@ Page({
     },
     //通过循环生成的index控制样式
     checked(e){
-        //console.log(e.target.dataset.spid)
-        //console.log(e.target.dataset.spimg_url)
         this.setData({
             cur:e.target.dataset.index,      //获取选中下标
             spid: e.target.dataset.spid,      //获取选中规格的spid
             spimg_url:e.target.dataset.spimg_url,      //获取选中规格的对应图片
             colorspec: e.target.dataset.colorspec,      //获取选中规格的对应颜色
         })
-        //console.log(this.data.cur)
-        //console.log(e.target.dataset.item)
     },
 
     //控制弹出框
@@ -139,8 +135,6 @@ Page({
             
             //购物车信息缓存
             var cartItems = wx.getStorageSync('cartItems') || [];
-            //console.log(cartItems)
-            //console.log(typeof (this.data.cur))
             //判断购物车缓存中是否已存在该货品
             var exist = cartItems.find( (ele)=> {
                 return ele.spid == this.data.spid   //使用每个规格对应的独一无二的id比较
@@ -323,8 +317,6 @@ Page({
             wx.getStorage({
                 key: 'cartnum',
                 success: (res) => {
-                    //console.log(res)
-                    //console.log(res.data)
                     //判断:如果本地储存中data有数据，才使小蓝点显示
                     if(res.data!=""){
                         this.setData({
@@ -332,7 +324,6 @@ Page({
                             showspan:true
                         })
                     }
-                    //console.log(this.data.spannum)
                 },
             })
         }
@@ -359,9 +350,7 @@ Page({
     onUnload: function () {
         n=0;      //再次初始化n，使之每次进入页面点击第一次弹出模态框
         shopCartInfo = wx.getStorageSync("cartItems")
-        //console.log(shopCartInfo)
         app.globalData.shopCartInfo = shopCartInfo      //重新赋值地址
-        //console.log(app.globalData.shopCartInfo)
     },
 
     /**

@@ -7,32 +7,4 @@
             <text>￥{{item.price}}</text>
         </view>
     </view>
-    <!-- <view class='pro-item'>
-        <image src="/assets/products_prev/1.png"></image>
-        <view class='text'>
-            <text>GS-MO蓝牙耳机</text>
-            <text>￥138.00</text>
-        </view>
-    </view>
-    <view class='pro-item'>
-        <image src="/assets/products_prev/2.png"></image>
-        <view class='text'>
-            <text>GS-MO蓝牙耳机</text>
-            <text>￥138.00</text>
-        </view>
-    </view>
-    <view class='pro-item'>
-        <image src="/assets/products_prev/3.png"></image>
-        <view class='text'>
-            <text>GS-MO蓝牙耳机</text>
-            <text>￥138.00</text>
-        </view>
-    </view>
-    <view class='pro-item'>
-        <image src="/assets/products_prev/1.png"></image>
-        <view class='text'>
-            <text>GS-MO蓝牙耳机</text>
-            <text>￥138.00</text>
-        </view>
-    </view> -->
 </view>
