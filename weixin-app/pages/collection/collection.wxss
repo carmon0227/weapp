@@ -1,4 +1,15 @@
 /* pages/collection/collection.wxss */
+page{
+    position:relative;
+}
+.empty{
+    width:100%;
+    text-align: center;
+    font-size: 15px;
+    position:absolute;
+    top:0;
+    z-index: 10;
+}
 .collection{
     margin-bottom:10rpx;
 }

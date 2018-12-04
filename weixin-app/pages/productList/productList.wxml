@@ -1,10 +1,12 @@
 <!--pages/productList/productList.wxml-->
+<wxs module='filter' src='../../utils/filter.wxs'></wxs>
+
 <view class='product-list'>
     <view class='pro-item' wx:for="{{index_info}}" wx:key="{{pid}}" data-pid="{{item.pid}}" bindtap="goDetail">
         <image src="{{item.img_url}}"></image>
         <view class='text'>
             <text>{{item.pname}}</text>
-            <text>￥{{item.price}}</text>
+            <text>￥{{filter.price(item.price)}}</text>
         </view>
     </view>
 </view>

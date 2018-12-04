@@ -13,6 +13,11 @@ page{
     padding:20rpx;
     margin-bottom:20rpx;
 }
+.item1{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
 .order-img{
     border:1px solid #ddd;
 }
@@ -25,11 +30,11 @@ page{
     justify-content: space-between;
     align-items: flex-start;
     flex-direction: column;
-    font-size: 14px;
+    font-size: 13px;
     height:100%;
-    width:50%;
-    padding:10rpx 0;
-    line-height: 2;
+    margin-left:20rpx;
+    padding:20rpx 0;
+    /* line-height: 1; */
 }
 .order-msg text{
     display: block;

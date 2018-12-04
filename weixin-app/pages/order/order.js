@@ -22,7 +22,7 @@ Page({
             url: 'http://127.0.0.1:3030/order/myorder',
             success:(res)=>{
                 this.setData({
-                    myorderList:res.data
+                    myorderList:res.data.reverse()   //翻转
                 })
             }
         })

@@ -1,6 +1,12 @@
 <!--pages/collection/collection.wxml-->
 <wxs module='filter' src='../../utils/filter.wxs'></wxs>
 
+<view class='empty' wx:if="{{!hasList}}">
+    <view>
+        <text>还没有任何收藏，快去逛逛吧~</text>
+    </view>
+</view>
+
 <view class='collection' wx:for="{{collection}}" wx:key="{{id}}">
     <view class='collection-item'>
         <view class='item-img'>
@@ -10,18 +16,18 @@
             <text class='item-title'>{{item.pname}}</text>
             <view class='item-price'>
                 <text>￥{{filter.price(item.price)}}</text>
-                <image src="/assets/icon/more.png" bindtap='showmore' data-index="{{index}}"></image>
+                <image src="/assets/icon/more.png" bindtap='showmore' data-index="{{index}}" data-isSelected="{{false}}"></image>
             </view>
         </view>
     </view>
-    <view class='more-item' wx:if="{{isShowmore}}">
-        <view class='item'>
-            <image src='/assets/icon/collection.png'></image>
+    <view class='more-item' wx:if="{{item.selected}}">
+        <!-- <view class='item' bindtap="addcart">
+            <image src='/assets/icon/addcart.png'></image>
             <text>加入购物车</text>
         </view>
-        <view class='divider'></view>
-        <view class='item'>
-            <image src='/assets/icon/collection.png'></image>
+        <view class='divider'></view> -->
+        <view class='item' bindtap="cancelCollection" data-index="{{index}}" data-pid="{{item.pid}}">
+            <image src='/assets/icon/collection-fill.png'></image>
             <text>取消收藏</text>
         </view>
     </view>

@@ -24,6 +24,11 @@ Page({
           url: '/pages/order/order',
       })
   },
+    goCollection() {
+        wx.navigateTo({
+            url: '/pages/collection/collection',
+        })
+    },
 
     clear() {
         wx.removeStorage({

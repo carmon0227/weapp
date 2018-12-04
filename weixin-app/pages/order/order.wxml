@@ -3,12 +3,15 @@
 
 <view class='order'>
     <view class='order-item' wx:for="{{myorderList}}" wx:key="{{orid}}" data-pid="{{item.pid}}" bindtap='goDetail'>
-        <view class='order-img'>
-            <image src="{{item.oimg_url}}"></image>
-        </view>
-        <view class='order-msg'>
-            <text>{{item.pname}}</text>
-            <text>{{item.colorspec}}</text>
+        <view class='item1'>
+            <view class='order-img'>
+                <image src="{{item.oimg_url}}"></image>
+            </view>
+            <view class='order-msg'>
+                <text>{{item.pname}}</text>
+                <text>{{item.colorspec}}</text>
+                <text>数量： {{item.quantity}}</text>
+            </view>
         </view>
         <view class='order-price'>
             <text>已完成</text>
